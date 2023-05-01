@@ -1,7 +1,7 @@
 import { Profile } from 'components/Profile/Profile';
 import { Statistics } from 'components/Statistics/Statistics';
 import { FriendList } from 'components/FriendList/FriendList';
-import { Transactions } from 'components/Transactions/Transactions.jsx';
+// import { Transactions } from 'components/Transactions/Transactions.jsx';
 import data from 'data/data.json';
 import user from 'data/user.json';
 import friends from 'data/friends.json';

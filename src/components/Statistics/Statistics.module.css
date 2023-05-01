@@ -9,6 +9,7 @@
   padding-left: 30px;
   padding-right: 30px;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .stat_list {
@@ -22,6 +23,7 @@
 .item {
   padding: 20px;
   color: white;
+  width: 80px;
 }
 
 .label {

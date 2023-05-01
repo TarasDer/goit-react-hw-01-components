@@ -1,39 +1,54 @@
 import css from 'components/Profile/Profile.module.css';
 import PropTypes from 'prop-types';
 
-export const Profile = ({ User }) => {
+export const Profile = ({
+  username,
+  tag,
+  location,
+  avatar,
+  followers,
+  views,
+  likes,
+}) => {
   return (
     <div className={css.profile}>
       <div className="description">
-        <img src={User.avatar} alt="User avatar" className={css.avatar} />
-        <p className={css.name}>{User.username}</p>
-        <p className={css.tag}>@{User.tag}</p>
-        <p className={css.location}>{User.location}</p>
+        <img src={avatar} alt="User avatar" className={css.avatar} />
+        <p className={css.name}>{username}</p>
+        <p className={css.tag}>@{tag}</p>
+        <p className={css.location}>{location}</p>
       </div>
 
       <ul className={css.stats}>
         <li className={css.stats_item}>
           <span className={css.label}>Followers</span>
-          <span className={css.quantity}>{User.stats.followers}</span>
+          <span className={css.quantity}>{followers}</span>
         </li>
         <li className={css.stats_item}>
           <span className={css.label}>Views</span>
-          <span className={css.quantity}>{User.stats.views}</span>
+          <span className={css.quantity}>{views}</span>
         </li>
         <li className={css.stats_item}>
           <span className={css.label}>Likes</span>
-          <span className={css.quantity}>{User.stats.likes}</span>
+          <span className={css.quantity}>{likes}</span>
         </li>
       </ul>
     </div>
   );
 };
+
 Profile.propTypes = {
-  Username: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
-  avatar: PropTypes.string,
-  followers: PropTypes.number,
-  views: PropTypes.number,
-  likes: PropTypes.number,
+  user: PropTypes.arrayOf(
+    PropTypes.exact({
+      username: PropTypes.string.isRequired,
+      tag: PropTypes.string.isRequired,
+      location: PropTypes.string.isRequired,
+      avatar: PropTypes.string.isRequired,
+      stats: PropTypes.exact({
+        followers: PropTypes.number.isRequired,
+        views: PropTypes.number.isRequired,
+        likes: PropTypes.number.isRequired,
+      }),
+    })
+  ),
 };

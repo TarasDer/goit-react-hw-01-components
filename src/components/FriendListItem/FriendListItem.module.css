@@ -1,0 +1,22 @@
+.status {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.status.isOnline {
+  background-color: green;
+}
+
+.avatar {
+  border-radius: 10px;
+  border: 1px solid grey;
+  background-color: aliceblue;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 30px;
+}
